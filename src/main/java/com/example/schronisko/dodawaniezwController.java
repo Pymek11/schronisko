@@ -1,5 +1,4 @@
 package com.example.schronisko;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,41 +16,43 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-public class AdoptujacyLoginController {
+public class dodawaniezwController {
     @FXML
     private Button PowrotButton;
     @FXML
-    private Button ZalogujButton;
+    private Button DodajButton;
     @FXML
-    private TextField LoginText;
+    private TextField WagaText;
     @FXML
-    private TextField HasloText;
+    private TextField ImieText;
+    @FXML
+    private TextField WiekText;
+    @FXML
+    private TextField RasaText;
 
-    public void onZalogujButton(){
-        // get id get haslo
-        //sprawdzanie czy id -> haslo hashmapy == haslo wpisane
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
-            Parent root = loader.load();
-            Stage currentStage = (Stage) ZalogujButton.getScene().getWindow();
-            currentStage.close();
-            Stage newStage = new Stage();
-            newStage.setScene(new Scene(root));
-            newStage.setTitle("Oddawanie zwierzat");
-            newStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public void onPowrotButton(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("startGUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
             Parent root = loader.load();
             Stage currentStage = (Stage) PowrotButton.getScene().getWindow();
             currentStage.close();
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
-            newStage.setTitle("Strona Schroniska");
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void onDodajButton(){
+
+        //dodawanie zwierzat do hashmapy
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
+            Parent root = loader.load();
+            Stage currentStage = (Stage) DodajButton.getScene().getWindow();
+            currentStage.close();
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
             newStage.show();
         } catch (IOException e) {
             e.printStackTrace();

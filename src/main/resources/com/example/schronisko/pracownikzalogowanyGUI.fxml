@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);" fx:controller="com.example.schroniskogui.pracownikzalogowanyController" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<VBox  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);"  xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schronisko.PracownikZalogowanyController">
     <children>
         <Pane prefHeight="140.0" prefWidth="600.0">
             <children>
@@ -18,14 +18,14 @@
             <children>
                 <Pane prefHeight="201.0" prefWidth="296.0">
                     <children>
-                        <Button layoutX="42.0" layoutY="42.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="219.0" text="SPRAWDZIĆ STAN">
+                        <Button fx:id="StanButton" onAction="#onStanButton" layoutX="42.0" layoutY="42.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="219.0" text="SPRAWDZIĆ STAN">
                             <font>
                                 <Font size="20.0" />
                             </font></Button>
                     </children></Pane>
                 <Pane prefHeight="201.0" prefWidth="284.0">
                     <children>
-                        <Button layoutX="40.0" layoutY="43.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="219.0" text="DODAĆ ZWIERZĘ">
+                        <Button fx:id="DodawanieButton" onAction="#onDodawanieButton" layoutX="40.0" layoutY="43.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="219.0" text="DODAĆ ZWIERZĘ">
                             <font>
                                 <Font size="22.0" />
                             </font>
@@ -34,7 +34,7 @@
             </children></HBox>
         <Pane prefHeight="69.0" prefWidth="600.0">
             <children>
-                <Button layoutX="37.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="POWRÓT" />
+                <Button fx:id="WylogujButton" onAction="#onWylogujButton" layoutX="37.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="WYLOGUJ" />
             </children>
         </Pane>
     </children>

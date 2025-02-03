@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schronisko.startGUIController">
    <children>
       <HBox prefHeight="86.0" prefWidth="600.0">
          <children>
@@ -29,17 +29,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="adoptujacyBUTTON" onAction="#onAdoptuajcyButton" mnemonicParsing="false" prefHeight="49.0" prefWidth="227.0" text="ADOPTUJĄCY" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="adoptujacyButton" onAction="#onAdoptujacyButton" mnemonicParsing="false" prefHeight="49.0" prefWidth="227.0" text="ADOPTUJĄCY" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="pracownikBUTTON" onAction="#onPracownikButton" mnemonicParsing="false" prefHeight="53.0" prefWidth="222.0" text="PRACOWNIK" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button fx:id="pracownikButton" onAction="#onPracownikButton" mnemonicParsing="false" prefHeight="53.0" prefWidth="222.0" text="PRACOWNIK" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="wyjscieBUTTON" onAction="#onWyjscieButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="WYJŚCIE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="wyjscieButton" onAction="#onWyjscieButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="WYJŚCIE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children></HBox>

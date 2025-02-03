@@ -37,6 +37,16 @@
                                 <TextField fx:id="LoginText" layoutX="64.0" layoutY="27.0" prefHeight="28.0" prefWidth="171.0" />
                             </children>
                         </Pane>
+                  <Label alignment="CENTER" prefHeight="80.0" prefWidth="302.0" text="HASŁO" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <TextField fx:id="HasloText" layoutX="63.0" layoutY="25.0" prefHeight="28.0" prefWidth="171.0" />
+                     </children>
+                  </Pane>
                     </children>
                 </GridPane>
             <Pane prefHeight="58.0" prefWidth="600.0">

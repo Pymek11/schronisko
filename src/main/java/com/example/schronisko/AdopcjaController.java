@@ -55,7 +55,23 @@ public class AdopcjaController {
         //selected animal
         //if selected animal != null
         //remove animal from hashmap
-        Refresh();
+        try {
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage (window) and close it
+            Stage currentStage = (Stage) PowrotButton.getScene().getWindow();
+            currentStage.close();
+
+            // Create a new stage (window) for the new FXML
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            newStage.setTitle("Adoptujący GUI");
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void onPoprzedniButton(){
         //get selected animal

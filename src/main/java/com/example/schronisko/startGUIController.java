@@ -17,44 +17,42 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-public class AdoptujacyLoginController {
-    @FXML
-    private Button PowrotButton;
-    @FXML
-    private Button ZalogujButton;
-    @FXML
-    private TextField LoginText;
-    @FXML
-    private TextField HasloText;
 
-    public void onZalogujButton(){
-        // get id get haslo
-        //sprawdzanie czy id -> haslo hashmapy == haslo wpisane
+public class startGUIController {
+    @FXML
+    private Button pracownikButton;
+    @FXML
+    private Button adoptujacyButton;
+    @FXML
+    private Button wyjscieButton;
+
+    public void onPracownikButton(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("pracownikLoginGUI.fxml"));
             Parent root = loader.load();
-            Stage currentStage = (Stage) ZalogujButton.getScene().getWindow();
+            Stage currentStage = (Stage) pracownikButton.getScene().getWindow();
             currentStage.close();
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
-            newStage.setTitle("Oddawanie zwierzat");
             newStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void onPowrotButton(){
+    public void onAdoptujacyButton(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("startGUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyLoginGUI.fxml"));
             Parent root = loader.load();
-            Stage currentStage = (Stage) PowrotButton.getScene().getWindow();
+            Stage currentStage = (Stage) adoptujacyButton.getScene().getWindow();
             currentStage.close();
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
-            newStage.setTitle("Strona Schroniska");
             newStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void onWyjscieButton(){
+        System.exit(0);
     }
 }

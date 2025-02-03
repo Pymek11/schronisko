@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schronisko.stanController">
    <children>
       <VBox layoutX="60.0" layoutY="54.0" prefHeight="408.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -46,19 +46,19 @@
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <TextField editable="false" layoutX="76.0" layoutY="25.0" />
+                        <TextField fx:id="iloscZwText" editable="false" layoutX="76.0" layoutY="25.0"  />
                      </children>
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <TextField editable="false" layoutX="76.0" layoutY="19.0" />
+                        <TextField fx:id="iloscAdText" editable="false" layoutX="76.0" layoutY="19.0" />
                      </children>
                   </Pane>
                </children>
             </GridPane>
             <Pane prefHeight="155.0" prefWidth="600.0">
                <children>
-                  <Button layoutX="40.0" layoutY="33.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="POWRÓT" />
+                  <Button fx:id="PowrotButton" onAction="#onPowrotButton" layoutX="40.0" layoutY="33.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="POWRÓT" />
                </children></Pane>
          </children></VBox>
    </children>
