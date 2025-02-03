@@ -20,12 +20,12 @@
                      </children></Pane>
                   <Pane prefHeight="307.0" prefWidth="292.0">
                      <children>
-                        <ComboBox layoutX="8.0" layoutY="11.0" prefHeight="39.0" prefWidth="271.0" promptText="                     GATUNEK ZWIERZĘCIA" />
-                        <TextArea editable="false" layoutX="10.0" layoutY="65.0" maxHeight="200.0" maxWidth="264.0" prefHeight="187.0" prefWidth="264.0" promptText="opis wybranego zwierzecia" wrapText="true" />
+                        <ComboBox fx:id="ComboboxZwierzaki" layoutX="8.0" layoutY="11.0" prefHeight="39.0" prefWidth="264.0" promptText="                     GATUNEK ZWIERZĘCIA" />
+                        <TextArea fx:id="OpisText" editable="false" layoutX="10.0" layoutY="65.0" maxHeight="200.0" maxWidth="264.0" prefHeight="187.0" prefWidth="264.0" promptText="opis wybranego zwierzecia" wrapText="true" />
                      </children></Pane>
                   <Pane prefHeight="73.0" prefWidth="292.0">
                      <children>
-                        <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" text="POWRÓT" />
+                        <Button fx:id="PowrotButton" layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPowrotButton" text="POWRÓT" />
                      </children></Pane>
                </children>
             </VBox>
@@ -70,10 +70,10 @@
                                           <Font size="20.0" />
                                        </font>
                                     </Label>
-                                    <TextField alignment="CENTER" editable="false" promptText="WAGA" GridPane.rowIndex="7" />
-                                    <TextField alignment="CENTER" promptText="WIEK" GridPane.rowIndex="5" />
-                                    <TextField alignment="CENTER" editable="false" promptText="RASA" GridPane.rowIndex="3" />
-                                    <TextField alignment="CENTER" editable="false" promptText="IMIE" GridPane.rowIndex="1" />
+                                    <TextField fx:id="WagaText" alignment="CENTER" editable="false" promptText="WAGA" GridPane.rowIndex="7" />
+                                    <TextField fx:id="WiekText" alignment="CENTER" promptText="WIEK" GridPane.rowIndex="5" />
+                                    <TextField fx:id="RasaText" alignment="CENTER" editable="false" promptText="RASA" GridPane.rowIndex="3" />
+                                    <TextField fx:id="ImieText" alignment="CENTER" editable="false" promptText="IMIE" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
                            </children>
@@ -83,9 +83,9 @@
                   </HBox>
                   <Pane prefHeight="140.0" prefWidth="308.0">
                      <children>
-                        <Button layoutX="223.0" layoutY="101.0" mnemonicParsing="false" text="ADOPTUJ" />
-                        <Button layoutX="219.0" layoutY="27.0" mnemonicParsing="false" text="NASTEPNY" />
-                        <Button layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="POPRZEDNI" />
+                        <Button fx:id="AdoptujButton" onAction="#onAdoptujButton" layoutX="223.0" layoutY="101.0" mnemonicParsing="false" text="ADOPTUJ" />
+                        <Button fx:id="NastepnyButton" onAction="#onNastepnyButton" layoutX="219.0" layoutY="27.0" mnemonicParsing="false" text="NASTEPNY" />
+                        <Button fx:id="PoprzedniButton" onAction="#onPoprzedniButton" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="POPRZEDNI" />
                      </children></Pane>
                </children></VBox>
          </children>

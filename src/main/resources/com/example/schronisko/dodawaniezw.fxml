@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schronisko.DodawanieController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
         <HBox layoutX="182.0" layoutY="124.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -70,10 +70,10 @@
                                                         <Font size="20.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField alignment="CENTER" promptText="WAGA" GridPane.rowIndex="7" />
-                                                <TextField alignment="CENTER" promptText="WIEK" GridPane.rowIndex="5" />
-                                                <TextField alignment="CENTER" promptText="RASA" GridPane.rowIndex="3" />
-                                                <TextField alignment="CENTER" promptText="IMIE" GridPane.rowIndex="1" />
+                                                <TextField fx:id="WagaText" alignment="CENTER" promptText="WAGA" GridPane.rowIndex="7" />
+                                                <TextField fx:id="WiekText" alignment="CENTER" promptText="WIEK" GridPane.rowIndex="5" />
+                                                <TextField fx:id="RasaText" alignment="CENTER" promptText="RASA" GridPane.rowIndex="3" />
+                                                <TextField fx:id="ImieText" alignment="CENTER" promptText="IMIE" GridPane.rowIndex="1" />
                                             </children>
                                         </GridPane>
                                     </children>
@@ -83,9 +83,9 @@
                         </HBox>
                         <Pane prefHeight="140.0" prefWidth="308.0">
                             <children>
-                                <Button layoutX="223.0" layoutY="101.0" mnemonicParsing="false" text="DODAJ" />
-                                <Button layoutX="219.0" layoutY="27.0" mnemonicParsing="false" text="NASTEPNY" />
-                                <Button layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="POPRZEDNI" />
+                                <Button  layoutX="223.0" layoutY="101.0" mnemonicParsing="false" text="DODAJ" />
+                                <Button  layoutX="219.0" layoutY="27.0" mnemonicParsing="false" text="NASTEPNY" />
+                                <Button  layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="POPRZEDNI" />
                             </children></Pane>
                     </children></VBox>
             </children>
