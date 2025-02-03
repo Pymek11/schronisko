@@ -1,5 +1,6 @@
 package Shelter;
 import java.io.*;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -8,21 +9,46 @@ public class Shelter {
     private List<Employee> employeeList;
     private List<Adoption> adoptionList;
     private List<User> userList;
+    private List<String> speciesList;
 
     public Shelter() {
         this.animalList = new ArrayList<>();
         this.employeeList = new ArrayList<>();
         this.adoptionList = new ArrayList<>();
         this.userList = new ArrayList<>();
+        this.speciesList = Arrays.asList("pies","kot");
 
         loadAnimalListFromCSV("ListaZwierzat");
         loadEmployeeListFromCSV("ListaPracownikow");
         loadAdoptionListFromCSV("ListaWnioskow");
         loadUserListFromCSV("ListaUzytkownikow");
     }
+    public List<Animal> getAnimalList() {
+        return animalList;
+    }
+
+    public List<User> getGetUserList() {
+        return userList;
+    }
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public List<Adoption> getAdoptionList() {
+        return adoptionList;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public List<String> getSpeciesList() {
+        return speciesList;
+    }
 
     private void loadAnimalListFromCSV(String filename) {
-        String filePath = "src" + File.separator + "main" + File.separator + "resources" + File.separator + filename;
+        String filePath = "src/main/resources/com/example/schronisko/" + filename;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             br.readLine(); // Pominięcie nagłówka
@@ -39,7 +65,7 @@ public class Shelter {
     }
 
     private void loadEmployeeListFromCSV(String filename) {
-        String filePath = "src/main/resources/" + filename;
+        String filePath = "src/main/resources/com/example/schronisko/" + filename;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             br.readLine();
@@ -55,7 +81,7 @@ public class Shelter {
     }
 
     private void loadAdoptionListFromCSV(String filename) {
-        String filePath = "src/main/resources/" + filename;
+        String filePath = "src/main/resources/com/example/schronisko/" + filename;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             br.readLine();
@@ -71,7 +97,7 @@ public class Shelter {
     }
 
     private void loadUserListFromCSV(String filename) {
-        String filePath = "src/main/resources/" + filename;
+        String filePath = "src/main/resources/com/example/schronisko/" + filename;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             br.readLine();
@@ -155,8 +181,8 @@ public class Shelter {
     }
 
     // Zapisz listy zwierzat do pliku csv
-    public void saveAnimalListToCSV(String filename) {
-        String filePath = "src" + File.separator + "main" + File.separator + "resources" + File.separator + filename;
+    public void saveAnimalListToCSV() {
+        String filePath = "src/main/resources/com/example/schronisko/ListaZwierzat";
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.write("ID,Species,Breed,Age,Weight,Description,Picture\n"); // Nagłówki kolumn
             for (Animal animal : animalList) {
@@ -169,15 +195,14 @@ public class Shelter {
                         animal.getDescription() + "," +
                         animal.getPicture() + "\n");
             }
-            System.out.println("Lista zwierząt została zapisana do pliku: " + filename);
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku CSV.");
             e.printStackTrace();
         }
     }
 
-    public void saveEmployeeListToCSV(String filename) {
-        String filePath = "src/main/resources/" + filename;
+    public void saveEmployeeListToCSV() {
+        String filePath = "src/main/resources/com/example/schronisko/ListaPracownikow";
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.write("ID,Name,Address,Email,AdoptionId\n"); // Nagłówki kolumn
             for (User user : userList) {
@@ -188,15 +213,14 @@ public class Shelter {
                         user.getEmail()+ ","+
                         user.getAdoptionIdList() +"\n");
             }
-            System.out.println("Lista pracownikow została zapisana do pliku: " + filename);
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku CSV.");
             e.printStackTrace();
         }
     }
 
-    public void saveAdoptionListToCSV(String filename) {
-        String filePath = "src/main/resources/" + filename;
+    public void saveAdoptionListToCSV() {
+        String filePath = "src/main/resources/com/example/schronisko/ListaWnioskow" ;
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.write("IDWniosku,IDSkladajacego,IDZwierzecia\n"); // Nagłówki kolumn
             for (Adoption adoption : adoptionList) {
@@ -205,15 +229,14 @@ public class Shelter {
                         adoption.getIdofSubbmiter()+","+
                         adoption.getIdofAnimal()+"\n");
             }
-            System.out.println("Lista adopcji została zapisana do pliku: " + filename);
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku CSV.");
             e.printStackTrace();
         }
     }
 
-    public void saveUserListToCSV(String filename) {
-        String filePath = "src/main/resources/" + filename;
+    public void saveUserListToCSV() {
+        String filePath = "src/main/resources/com/example/schronisko/ListaUzytkownikow";
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.write("ID,Name,Address,Email,AdoptionId\n"); // Nagłówki kolumn
             for (User user : userList) {
@@ -224,7 +247,6 @@ public class Shelter {
                         user.getEmail()+ ","+
                         user.getAdoptionIdList() +"\n");
             }
-            System.out.println("Lista uzytkownikow została zapisana do pliku: " + filename);
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku CSV.");
             e.printStackTrace();
@@ -233,19 +255,6 @@ public class Shelter {
 
 
     public static void main(String[] args) {
-        Shelter shelter= new Shelter();
-        Animal animal = new Animal(0,"Pies","Mieszaniec",4, 18.5F);
-        User user = new User(0,"Imię","Adress", "email");
-        Adoption adoption = new Adoption(0,1000,10000);
-        Employee employee = new Employee(0,"name","add","email");
-        shelter.addAdoptionApplicationToList(adoption);
-        shelter.addUserToList(user);
-        shelter.addAnimalToList(animal);
-        shelter.addEmployeeToList(employee);
-        shelter.saveAnimalListToCSV("ListaZwierzat");
-        shelter.saveAdoptionListToCSV("ListaWnioskow");
-        shelter.saveEmployeeListToCSV("ListaPracownikow");
-        shelter.saveUserListToCSV("ListaUzytkownikow");
     }
 
 }
