@@ -79,6 +79,9 @@ public class startGUIController {
     }
     public void saveChanges(){
         shelter.saveUserListToCSV();
+        shelter.saveAdoptionListToCSV();
+        shelter.saveEmployeeListToCSV();;
+        shelter.saveAnimalListToCSV();
     }
     public void onWyjscieButton(){
         System.exit(0);
