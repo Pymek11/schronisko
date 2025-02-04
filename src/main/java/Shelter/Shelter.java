@@ -11,6 +11,9 @@ public class Shelter {
     private List<User> userList;
     private List<String> speciesList;
 
+    private static Shelter instance;
+
+
     public Shelter() {
         this.animalList = new ArrayList<>();
         this.employeeList = new ArrayList<>();
@@ -23,6 +26,13 @@ public class Shelter {
         loadAdoptionListFromCSV("ListaWnioskow");
         loadUserListFromCSV("ListaUzytkownikow");
     }
+    public static Shelter getInstance() {
+        if (instance == null) {
+            instance = new Shelter();
+        }
+        return instance;
+    }
+
     public List<Animal> getAnimalList() {
         return animalList;
     }
@@ -253,14 +263,5 @@ public class Shelter {
             e.printStackTrace();
         }
     }
-
-
-    public static void main(String[] args) {
-        Shelter shelter = new Shelter();
-        Animal animal = new Animal(0,"Burek","pies","mieszniec",10,20);
-        shelter.addAnimalToList(animal);
-        shelter.saveAnimalListToCSV();
-    }
-
 }
 

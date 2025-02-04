@@ -11,14 +11,20 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class stanController {
-    public startGUIApplication startguiapplication;
+    Shelter shelter = Shelter.getInstance();
     @FXML
     private Button PowrotButton;
     @FXML
     private TextField iloscAdText;
     @FXML
     private TextField iloscZwText;
-
+    public void Refresh(){
+        iloscAdText.setText(String.valueOf(shelter.getAdoptionList().size()));
+        iloscZwText.setText(String.valueOf(shelter.getAnimalList().size()));
+    }
+    public void initialize(){
+        Refresh();
+    }
     public void onPowrotButton(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("pracownikzalogowanyGUI.fxml"));

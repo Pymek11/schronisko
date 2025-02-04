@@ -11,21 +11,21 @@
                 <VBox prefHeight="400.0" prefWidth="292.0">
                     <children>
                         <Pane prefHeight="80.0" prefWidth="292.0">
-                            <children>
-                                <Label alignment="CENTER" layoutX="4.0" layoutY="4.0" prefHeight="53.0" prefWidth="284.0" text="ZWIERZETA" textFill="WHITE">
+                     <children>
+                                <Label alignment="CENTER" layoutX="4.0" layoutY="34.0" prefHeight="53.0" prefWidth="284.0" text="ZWIERZETA" textFill="WHITE">
                                     <font>
                                         <Font size="36.0" />
                                     </font>
                                 </Label>
-                            </children></Pane>
+                     </children></Pane>
                         <Pane prefHeight="307.0" prefWidth="292.0">
                             <children>
-                                <ComboBox layoutX="8.0" layoutY="11.0" prefHeight="39.0" prefWidth="271.0" promptText="                     GATUNEK ZWIERZĘCIA" />
                                 <TextArea layoutX="10.0" layoutY="65.0" maxHeight="200.0" maxWidth="264.0" prefHeight="187.0" prefWidth="264.0" promptText="opis wybranego zwierzecia" wrapText="true" />
+                        <TextField fx:id="GatunekText" layoutX="68.0" layoutY="26.0" />
                             </children></Pane>
                         <Pane prefHeight="73.0" prefWidth="292.0">
                             <children>
-                                <Button fx:id="PowrotButton" onAction="#onPowrotButton" layoutX="24.0" layoutY="14.0" mnemonicParsing="false" text="POWRÓT" />
+                                <Button fx:id="PowrotButton" layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#onPowrotButton" text="POWRÓT" />
                             </children></Pane>
                     </children>
                 </VBox>
@@ -83,7 +83,7 @@
                         </HBox>
                         <Pane prefHeight="140.0" prefWidth="308.0">
                             <children>
-                                <Button  fx:id="DodajButton" onAction="#onDodajButton" layoutX="223.0" layoutY="101.0" mnemonicParsing="false" text="DODAJ" />
+                                <Button fx:id="DodajButton" layoutX="223.0" layoutY="101.0" mnemonicParsing="false" onAction="#onDodajButton" text="DODAJ" />
                             </children></Pane>
                     </children></VBox>
             </children>

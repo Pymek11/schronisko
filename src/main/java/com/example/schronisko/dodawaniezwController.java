@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class dodawaniezwController {
+    Shelter shelter = Shelter.getInstance();
     @FXML
     private Button PowrotButton;
     @FXML
@@ -23,6 +24,8 @@ public class dodawaniezwController {
     private TextField WiekText;
     @FXML
     private TextField RasaText;
+    @FXML
+    private TextField GatunekText;
 
     public void onPowrotButton(){
         try {
@@ -38,8 +41,15 @@ public class dodawaniezwController {
         }
     }
     public void onDodajButton(){
+        String imie = ImieText.getText();
+        int wiek = Integer.parseInt(WiekText.getText());
+        String rasa = RasaText.getText();
+        String gatunek = GatunekText.getText();
+        float waga = Float.parseFloat(WagaText.getText());
+        Animal animal = new Animal(10,imie,gatunek,rasa, wiek,waga);
+        shelter.getAnimalList().add(animal);
 
-        //dodawanie zwierzat do hashmapy
+        shelter.saveAnimalListToCSV();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
             Parent root = loader.load();

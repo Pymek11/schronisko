@@ -19,6 +19,7 @@
                               <Font size="36.0" />
                            </font>
                         </Label>
+                        <TextField fx:id="GatunekText" alignment="CENTER" layoutX="80.0" layoutY="26.0" />
                      </children></Pane>
                   <Pane prefHeight="73.0" prefWidth="292.0">
                      <children>

@@ -25,6 +25,7 @@ public class startGUIController {
             Parent root = loader.load();
             Stage currentStage = (Stage) pracownikButton.getScene().getWindow();
             currentStage.close();
+
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.show();
@@ -54,7 +55,5 @@ public class startGUIController {
     public void onWyjscieButton(){
         System.exit(0);
     }
-    public void Refresh(){
 
-    }
 }

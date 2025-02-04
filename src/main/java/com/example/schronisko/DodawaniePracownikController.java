@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import Shelter.*;
 import java.io.IOException;
 public class DodawaniePracownikController {
+    Shelter shelter = Shelter.getInstance();
     @FXML
     private Button PowrotButton;
     @FXML
@@ -21,6 +22,8 @@ public class DodawaniePracownikController {
     private TextField WiekText;
     @FXML
     private TextField RasaText;
+    @FXML
+    private TextField GatunekText;
 
     public void onPowrotButton(){
         try {
@@ -37,6 +40,15 @@ public class DodawaniePracownikController {
         }
     }
     public void onDodajButton(){
+        String imie = ImieText.getText();
+        int wiek = Integer.parseInt(WiekText.getText());
+        String rasa = RasaText.getText();
+        String gatunek = GatunekText.getText();
+        float waga = Float.parseFloat(WagaText.getText());
+        Animal animal = new Animal(10,imie,gatunek,rasa, wiek,waga);
+        shelter.getAnimalList().add(animal);
+
+        shelter.saveAnimalListToCSV();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("pracownikzalogowanyGUI.fxml"));
             Parent root = loader.load();

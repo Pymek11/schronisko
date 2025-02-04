@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import Shelter.*;
 import java.io.IOException;
 public class AdoptujacyGUIController {
+
     @FXML
     private Button PowrotButton;
     @FXML
@@ -36,6 +37,7 @@ public class AdoptujacyGUIController {
             Parent root = loader.load();
             Stage currentStage = (Stage) OddanieButton.getScene().getWindow();
             currentStage.close();
+
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.setTitle("Oddawanie zwierzat");
@@ -50,6 +52,7 @@ public class AdoptujacyGUIController {
             Parent root = loader.load();
             Stage currentStage = (Stage) AdopcjaButton.getScene().getWindow();
             currentStage.close();
+
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.setTitle("Login");

@@ -16,21 +16,23 @@ public class PracownikLoginController {
     @FXML
     private Button ZalogujButton;
     @FXML
-    private TextField LoginText;
+    private TextField IDPracownikaText;
     @FXML
-    private TextField HasloText;
+    private TextField HasloPracownikaText;
 
     public void onZalogujButton(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("pracownikzalogowanyGUI.fxml"));
-            Parent root = loader.load();
-            Stage currentStage = (Stage) ZalogujButton.getScene().getWindow();
-            currentStage.close();
-            Stage newStage = new Stage();
-            newStage.setScene(new Scene(root));
-            newStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(HasloPracownikaText.getText().equals("admin") && IDPracownikaText.getText().equals("admin")){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("pracownikzalogowanyGUI.fxml"));
+                Parent root = loader.load();
+                Stage currentStage = (Stage) ZalogujButton.getScene().getWindow();
+                currentStage.close();
+                Stage newStage = new Stage();
+                newStage.setScene(new Scene(root));
+                newStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void onPowrotButton(){

@@ -11,9 +11,6 @@ import java.io.IOException;
 import java.sql.Ref;
 
 public class AdopcjaController {
-    public startGUIController startguicontroller;
-    @FXML
-    private ComboBox<String> ComboboxZwierzaki  ;
     @FXML
     private Button PowrotButton;
     @FXML
@@ -32,12 +29,14 @@ public class AdopcjaController {
     private TextField RasaText;
     @FXML
     private TextField ImieText;
+    @FXML
+    private TextField GatunekText;
     public int i = 0;
-
+    Shelter shelter = Shelter.getInstance();
     public void onAdoptujButton(){
-        //selected animal
-        //if selected animal != null
-        //remove animal from hashmap
+        shelter.getAnimalList().remove(i);
+        shelter.saveAnimalListToCSV();
+        i-=1;
         try {
             // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
@@ -57,27 +56,26 @@ public class AdopcjaController {
         }
     }
     public void Refresh(){
-
-        OpisText.setText(startguicontroller.shelter.getAnimalListElem(i).getDescription());
-        WagaText.setText(Double.toString(startguicontroller.shelter.getAnimalListElem(i).getWeight()));
-        WiekText.setText(Integer.toString(startguicontroller.shelter.getAnimalListElem(i).getAge()));
-        RasaText.setText(startguicontroller.shelter.getAnimalListElem(i).getBreed());
-        //ImieText.setText(startguicontroller.shelter.getAnimalListElem(i).getName());
+        OpisText.setText(shelter.getAnimalListElem(i).getDescription());
+        WagaText.setText(Double.toString(shelter.getAnimalListElem(i).getWeight()));
+        WiekText.setText(Integer.toString(shelter.getAnimalListElem(i).getAge()));
+        RasaText.setText(shelter.getAnimalListElem(i).getBreed());
+        ImieText.setText(shelter.getAnimalListElem(i).getImie());
+        GatunekText.setText(shelter.getAnimalListElem(i).getSpecies());
         //}
     }
     public void onPoprzedniButton(){
-        i-=1;
+        if(i==0){
+            }else{
+            i-=1;
+        }
+        Refresh();
     }
     public void onNastepnyButton(){
-        //get selected animal
-        // selected animal == animal - 1
-        // if selected animal(index w hashmapie) < 0
-        //return animal( index max hashmapy -1)
-
-        i+=1;
-
-
-
+        if(i>=shelter.getAnimalList().size()-1) {
+        }else{
+            i+=1;
+        }
         Refresh();
     }
     public void onPowrotButton(){

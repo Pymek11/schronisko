@@ -20,19 +20,19 @@ public class AdoptujacyLoginController {
     private TextField HasloText;
 
     public void onZalogujButton(){
-        // get id get haslo
-        //sprawdzanie czy id -> haslo hashmapy == haslo wpisane
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
-            Parent root = loader.load();
-            Stage currentStage = (Stage) ZalogujButton.getScene().getWindow();
-            currentStage.close();
-            Stage newStage = new Stage();
-            newStage.setScene(new Scene(root));
-            newStage.setTitle("Oddawanie zwierzat");
-            newStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(LoginText.getText().equals("admin") && HasloText.getText().equals("admin") || LoginText.getText().equals("0") && HasloText.getText().equals("0") ){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
+                Parent root = loader.load();
+                Stage currentStage = (Stage) ZalogujButton.getScene().getWindow();
+                currentStage.close();
+                Stage newStage = new Stage();
+                newStage.setScene(new Scene(root));
+                newStage.setTitle("Oddawanie zwierzat");
+                newStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void onPowrotButton(){
