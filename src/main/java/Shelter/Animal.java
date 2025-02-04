@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Animal {
     private int id;
+    private String imie;
     private String species;
     private String breed;
     private int age;
@@ -13,12 +14,13 @@ public class Animal {
     // to do Zdjęcie;
 
     // Konstruktor nie ostawia opisu i zdjęcia
-    public Animal(int id,String species, String breed, int age, float weight) {
+    public Animal(int id,String imie_, String species, String breed, int age, float weight) {
         if(id == 0 ){
             this.id = generateID();
         }else{
             this.id=id;
         }
+        this.imie=imie_;
         this.species = species;
         this.breed = breed;
         this.age = age;
@@ -26,6 +28,11 @@ public class Animal {
         this.description = "";
         this.picture= "";
     }
+
+    public String getImie() {
+        return imie;
+    }
+
 
     public int getID() {
         return id;

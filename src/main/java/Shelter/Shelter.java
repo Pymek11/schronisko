@@ -54,7 +54,7 @@ public class Shelter {
             br.readLine(); // Pominięcie nagłówka
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-                Animal animal = new Animal(Integer.parseInt(data[0]), data[1], data[2], Integer.parseInt(data[3]),Float.parseFloat(data[4]));
+                Animal animal = new Animal(Integer.parseInt(data[0]), data[1], data[2],data[3], Integer.parseInt(data[4]),Float.parseFloat(data[5]));
                 animalList.add(animal);
             }
 
@@ -188,6 +188,7 @@ public class Shelter {
             for (Animal animal : animalList) {
                 writer.write(
                         animal.getID() + "," +
+                        animal.getImie() +","+
                         animal.getSpecies() + "," +
                         animal.getBreed() + "," +
                         animal.getAge() + "," +
@@ -255,6 +256,10 @@ public class Shelter {
 
 
     public static void main(String[] args) {
+        Shelter shelter = new Shelter();
+        Animal animal = new Animal(0,"Burek","pies","mieszniec",10,20);
+        shelter.addAnimalToList(animal);
+        shelter.saveAnimalListToCSV();
     }
 
 }
