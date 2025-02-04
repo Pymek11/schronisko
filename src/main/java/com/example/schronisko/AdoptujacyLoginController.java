@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Shelter.*;
@@ -17,7 +18,7 @@ public class AdoptujacyLoginController {
     @FXML
     private TextField LoginText;
     @FXML
-    private TextField HasloText;
+    private PasswordField HasloText;
 
     public void onZalogujButton(){
         if(LoginText.getText().equals("admin") && HasloText.getText().equals("admin") || LoginText.getText().equals("0") && HasloText.getText().equals("0") ){

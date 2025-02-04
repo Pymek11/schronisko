@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Shelter.*;
@@ -18,7 +19,7 @@ public class PracownikLoginController {
     @FXML
     private TextField IDPracownikaText;
     @FXML
-    private TextField HasloPracownikaText;
+    private PasswordField HasloPracownikaText;
 
     public void onZalogujButton(){
         if(HasloPracownikaText.getText().equals("admin") && IDPracownikaText.getText().equals("admin")){
