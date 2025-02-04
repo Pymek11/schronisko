@@ -6,10 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+import Shelter.*;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class stanController {
+    public startGUIApplication startguiapplication;
     @FXML
     private Button PowrotButton;
     @FXML

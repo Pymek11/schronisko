@@ -10,18 +10,15 @@
          <children>
             <VBox prefHeight="400.0" prefWidth="292.0">
                <children>
-                  <Pane prefHeight="80.0" prefWidth="292.0">
+                  <Pane prefHeight="80.0" prefWidth="292.0" />
+                  <Pane prefHeight="307.0" prefWidth="292.0">
                      <children>
-                        <Label alignment="CENTER" layoutX="4.0" layoutY="4.0" prefHeight="53.0" prefWidth="284.0" text="ZWIERZETA" textFill="WHITE">
+                        <TextArea fx:id="OpisText" editable="false" layoutX="10.0" layoutY="65.0" maxHeight="200.0" maxWidth="264.0" prefHeight="187.0" prefWidth="264.0" promptText="opis wybranego zwierzecia" wrapText="true" />
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="-27.0" prefHeight="53.0" prefWidth="284.0" text="ZWIERZETA" textFill="WHITE">
                            <font>
                               <Font size="36.0" />
                            </font>
                         </Label>
-                     </children></Pane>
-                  <Pane prefHeight="307.0" prefWidth="292.0">
-                     <children>
-                        <ComboBox fx:id="ComboboxZwierzaki" layoutX="8.0" layoutY="11.0" prefHeight="39.0" prefWidth="264.0" promptText="                     GATUNEK ZWIERZĘCIA" />
-                        <TextArea fx:id="OpisText" editable="false" layoutX="10.0" layoutY="65.0" maxHeight="200.0" maxWidth="264.0" prefHeight="187.0" prefWidth="264.0" promptText="opis wybranego zwierzecia" wrapText="true" />
                      </children></Pane>
                   <Pane prefHeight="73.0" prefWidth="292.0">
                      <children>
@@ -83,9 +80,9 @@
                   </HBox>
                   <Pane prefHeight="140.0" prefWidth="308.0">
                      <children>
-                        <Button fx:id="AdoptujButton" onAction="#onAdoptujButton" layoutX="223.0" layoutY="101.0" mnemonicParsing="false" text="ADOPTUJ" />
-                        <Button fx:id="NastepnyButton" onAction="#onNastepnyButton" layoutX="219.0" layoutY="27.0" mnemonicParsing="false" text="NASTEPNY" />
-                        <Button fx:id="PoprzedniButton" onAction="#onPoprzedniButton" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="POPRZEDNI" />
+                        <Button fx:id="AdoptujButton" layoutX="223.0" layoutY="101.0" mnemonicParsing="false" onAction="#onAdoptujButton" text="ADOPTUJ" />
+                        <Button fx:id="NastepnyButton" layoutX="219.0" layoutY="27.0" mnemonicParsing="false" onAction="#onNastepnyButton" text="NASTEPNY" />
+                        <Button fx:id="PoprzedniButton" layoutY="27.0" mnemonicParsing="false" onAction="#onPoprzedniButton" prefHeight="25.0" prefWidth="87.0" text="POPRZEDNI" />
                      </children></Pane>
                </children></VBox>
          </children>
