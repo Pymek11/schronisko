@@ -59,16 +59,14 @@ public class AdopcjaController {
     public void Refresh(){
 
         OpisText.setText(startguicontroller.shelter.getAnimalListElem(i).getDescription());
-        WagaText.setText("");
-        WiekText.setText(Double.toString(startguicontroller.shelter.getAnimalListElem(i).getWeight()));
+        WagaText.setText(Double.toString(startguicontroller.shelter.getAnimalListElem(i).getWeight()));
+        WiekText.setText(Integer.toString(startguicontroller.shelter.getAnimalListElem(i).getAge()));
         RasaText.setText(startguicontroller.shelter.getAnimalListElem(i).getBreed());
-        ImieText.setText("");
+        //ImieText.setText(startguicontroller.shelter.getAnimalListElem(i).getName());
         //}
     }
     public void onPoprzedniButton(){
         i-=1;
-        Animal currentanimal = startguicontroller.shelter.getAnimalListElem(i);
-        Refresh(currentanimal)
     }
     public void onNastepnyButton(){
         //get selected animal
