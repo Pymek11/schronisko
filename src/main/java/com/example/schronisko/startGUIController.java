@@ -32,8 +32,7 @@ public class startGUIController {
     Shelter shelter = new Shelter();
     HashMap<Integer, Animal> DogsList = new HashMap<>();
     HashMap<Integer, Animal> CatsList = new HashMap<>();
-    HashMap<Integer, User> UserList = new HashMap<>();
-    HashMap<Integer, Employee> EmployeeList = new HashMap<>();
+
     public void initialize(){
        for (Animal animal : shelter.getAnimalList()) {
             if ("pies".equalsIgnoreCase(animal.getSpecies())) {
@@ -42,12 +41,7 @@ public class startGUIController {
                 CatsList.put(animal.getID(), animal);
             }
         }
-        for (User user : shelter.getUserList()) {
-            UserList.put(user.getId(), user);
-        }
-        for (Employee employee : shelter.getEmployeeList()) {
-            EmployeeList.put(employee.getId(), employee);
-        }
+
 
 
     }
