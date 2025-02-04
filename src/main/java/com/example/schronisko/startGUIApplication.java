@@ -13,7 +13,7 @@ public class startGUIApplication extends Application {
         double screenWidth = 600;
         double screenHeight = 400;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(AdopcjaApplication.class.getResource("startGUI.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(startGUIApplication.class.getResource("startGUI.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight);
 
         stage.setTitle("Witamy w Schronisku!");
