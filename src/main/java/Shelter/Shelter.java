@@ -81,7 +81,7 @@ public class Shelter {
             br.readLine();
             while ((line = br.readLine()) != null) {
                String[] data = line.split(",");
-                Employee employee = new Employee(Integer.parseInt(data[0]), data[1], data[2],data[3]);
+                Employee employee = new Employee(Integer.parseInt(data[0]), data[1], data[2],data[3],data[4]);
                 addEmployeeToList(employee);
             }
         } catch (IOException e) {
@@ -113,7 +113,7 @@ public class Shelter {
             br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-                User user = new User(Integer.parseInt(data[0]), data[1], data[2],data[3]);
+                User user = new User(Integer.parseInt(data[0]), data[1], data[2],data[3],data[4]);
                 addUserToList(user);
             }
         } catch (IOException e) {
@@ -222,6 +222,7 @@ public class Shelter {
                         user.getName() + ","+
                         user.getAddress() + ","+
                         user.getEmail()+ ","+
+                        user.getPassword()+ ","+
                         user.getAdoptionIdList() +"\n");
             }
         } catch (IOException e) {
@@ -249,19 +250,30 @@ public class Shelter {
     public void saveUserListToCSV() {
         String filePath = "src/main/resources/com/example/schronisko/ListaUzytkownikow";
         try (FileWriter writer = new FileWriter(filePath)) {
-            writer.write("ID,Name,Address,Email,AdoptionId\n"); // Nagłówki kolumn
+            writer.write("ID,Name,Address,Email,Haslo,AdoptionId\n"); // Nagłówki kolumn
             for (User user : userList) {
                 writer.write(
                         user.getId() + "," +
                         user.getName() + ","+
                         user.getAddress() + ","+
                         user.getEmail()+ ","+
+                        user.getPassword()+ ","+
                         user.getAdoptionIdList() +"\n");
             }
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku CSV.");
             e.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        Shelter shelter = new Shelter();
+
+        User user = new User(0,"ABC","123","asd","123");
+        Employee employee = new Employee(0,"ABC","123","asd","123");
+        shelter.addUserToList(user);
+        shelter.addEmployeeToList(employee);
+        shelter.saveUserListToCSV();
+        shelter.saveEmployeeListToCSV();
     }
 }
 

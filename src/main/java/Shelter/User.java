@@ -7,10 +7,11 @@ public class User {
     private String name;
     private String address;
     private String email;
+    private String password;
     private int id;
     private List<Integer> adoptionIdList= new ArrayList<>();
 
-    public User(int id, String name, String address, String email) {
+    public User(int id, String name, String address, String email,String password) {
         if(id == 0 ){
             this.id = generateID();
         }else{
@@ -19,6 +20,7 @@ public class User {
         this.name = name;
         this.address = address;
         this.email = email;
+        this.password = password;
     }
     public String getName() {
         return name;
@@ -57,7 +59,9 @@ public class User {
     public List<Integer> getAdoptionIdList() {
         return adoptionIdList;
     }
-
+    public String getPassword() {
+        return password;
+    }
 
 
 

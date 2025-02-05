@@ -6,9 +6,10 @@ public class Employee{
     private String name;
     private String address;
     private String stanowisko;
+    private String password;
     private int id;
 
-    public Employee(int id_, String name_, String address_, String stanowisko_) {
+    public Employee(int id_, String name_, String address_, String password,String stanowisko_) {
         if(id == 0 ){
             this.id = generateID();
         }else{
@@ -16,6 +17,7 @@ public class Employee{
         }
         this.name = name_;
         this.address = address_;
+        this.password = password;
         this.stanowisko = stanowisko_;
 
     }
@@ -43,5 +45,8 @@ public class Employee{
     private int generateID() {
         Random random = new Random();
         return random.nextInt(10000); // Losowe ID z przedziału 100000 - 999999
+    }
+    public String getPassword() {
+        return password;
     }
 }

@@ -1,12 +1,4 @@
-ID,Name,Address,Email,AdoptionId
-8810,Imię,Adress,email,[]
-7818,Imię,Adress,email,[]
-4064,Imię,Adress,email,[]
-2854,Imię,Adress,email,[]
-511,Imię,Adress,email,[]
-9814,Imię,Adress,email,[]
-6049,Imię,Adress,email,[]
-308,Imię,Adress,email,[]
-2690,Imię,Adress,email,[]
-8492,Imię,Adress,email,[]
-6435,Imię,Adress,email,[]
+ID,Name,Address,Email,Haslo,AdoptionId
+734,ABC,123,asd,123,[]
+7719,ABC,123,asd,123,[]
+3147,ania,krakow,ania@gmail.com,123,[]

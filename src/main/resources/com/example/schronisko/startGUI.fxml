@@ -29,7 +29,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="adoptujacyButton" onAction="#onAdoptujacyButton" mnemonicParsing="false" prefHeight="49.0" prefWidth="227.0" text="ADOPTUJĄCY" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="adoptujacyButton" onAction="#onAdoptujacyButton" mnemonicParsing="false" prefHeight="49.0" prefWidth="227.0" text="KLIENT" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="24.0" />
                      </font>
