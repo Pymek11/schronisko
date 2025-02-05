@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import Shelter.*;
 import javafx.scene.image.Image;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class AdopcjaController {
     @FXML
@@ -35,27 +36,23 @@ public class AdopcjaController {
     private TextField ImieText;
     @FXML
     private TextField GatunekText;
+    @FXML
     private ImageView imageView;
     public int i = 0;
     Shelter shelter = Shelter.getInstance();
     public void initialize(){
         updateImage();
+        refresh();
     }
     private void updateImage() {
-        //String imageUrl = "src/main/resources/com/example/schronisko/pictures"+ shelter.getAnimalListElem(i).getPicture();
-        String imageUrl = getClass().getResource("/pies1.jpg").toExternalForm();
-        //String imageUrl = new File("C:/Users/Fisher/IdeaProjects/schronisko/src/main/resources/pies1.jpg").toURI().toString();
-        try {
-            Image image_ = new Image(imageUrl);
-            System.out.println("1");
-            imageView.setImage(image_);
-            System.out.println("2");
-            //System.out.println(imageUrl);
-        }catch (Exception e){
-            System.out.println("zły url");
-            //System.out.println(imageUrl);
-        }
+        //String url = shelter.getAnimalListElem(i).getPicture();
+        //System.out.println(shelter.getAnimalListElem(i).getPicture());
+        //if (url==null){System.out.println("null");}
+        String url = getClass().getResource(shelter.getAnimalListElem(i).getPicture()).toExternalForm();
+        Image image_ = new Image(url);
+        imageView.setImage(image_);
     }
+
     public void onAdoptujButton(){
         shelter.getAnimalList().remove(i);
         shelter.saveAnimalListToCSV();
@@ -79,7 +76,7 @@ public class AdopcjaController {
             e.printStackTrace();
         }
     }
-    public void Refresh(){
+    public void refresh(){
         OpisText.setText(shelter.getAnimalListElem(i).getDescription());
         WagaText.setText(Double.toString(shelter.getAnimalListElem(i).getWeight()));
         WiekText.setText(Integer.toString(shelter.getAnimalListElem(i).getAge()));
@@ -93,14 +90,16 @@ public class AdopcjaController {
             }else{
             i-=1;
         }
-        Refresh();
+        refresh();
+        updateImage();
     }
     public void onNastepnyButton(){
         if(i>=shelter.getAnimalList().size()-1) {
         }else{
             i+=1;
         }
-        Refresh();
+        refresh();
+        updateImage();
     }
     public void onPowrotButton(){
         try {
