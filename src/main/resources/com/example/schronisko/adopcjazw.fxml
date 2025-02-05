@@ -79,7 +79,7 @@
                         </Pane>
                         <Pane prefHeight="259.0" prefWidth="286.0">
                            <children>
-                              <ImageView fitHeight="259.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageView"  fitHeight="259.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" />
                            </children></Pane>
                      </children>
                   </HBox>

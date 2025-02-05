@@ -5,10 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import Shelter.*;
+import javafx.scene.image.Image;
 import java.io.IOException;
-import java.sql.Ref;
 
 public class AdopcjaController {
     @FXML
@@ -31,8 +35,27 @@ public class AdopcjaController {
     private TextField ImieText;
     @FXML
     private TextField GatunekText;
+    private ImageView imageView;
     public int i = 0;
     Shelter shelter = Shelter.getInstance();
+    public void initialize(){
+        updateImage();
+    }
+    private void updateImage() {
+        //String imageUrl = "src/main/resources/com/example/schronisko/pictures"+ shelter.getAnimalListElem(i).getPicture();
+        String imageUrl = getClass().getResource("/pies1.jpg").toExternalForm();
+        //String imageUrl = new File("C:/Users/Fisher/IdeaProjects/schronisko/src/main/resources/pies1.jpg").toURI().toString();
+        try {
+            Image image_ = new Image(imageUrl);
+            System.out.println("1");
+            imageView.setImage(image_);
+            System.out.println("2");
+            //System.out.println(imageUrl);
+        }catch (Exception e){
+            System.out.println("zły url");
+            //System.out.println(imageUrl);
+        }
+    }
     public void onAdoptujButton(){
         shelter.getAnimalList().remove(i);
         shelter.saveAnimalListToCSV();

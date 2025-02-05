@@ -28,7 +28,7 @@ public class RejestracjaUzytController {
     Button PowrotButton;
     public void onZarejestrujButton(){
 
-        for(Emailtext ){
+
             String email = EmailText.getText();
             String haslo = HasloText.getText();
             String imie = ImieText.getText();
@@ -50,7 +50,7 @@ public class RejestracjaUzytController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+
     }
     public void onPowrotButton(){
         try {
