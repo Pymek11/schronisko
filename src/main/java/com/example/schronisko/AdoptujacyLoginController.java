@@ -22,9 +22,17 @@ public class AdoptujacyLoginController {
     private TextField LoginText;
     @FXML
     private PasswordField HasloText;
-
+    public String getPasswordByEmail(String email) {
+        for (User user : shelter.getUserList()) {
+            if (user.getEmail().equals(email)) {
+                return user.getPassword();
+            }
+        }
+        return "Email not found";
+    }
     public void onZalogujButton(){
-        if(LoginText.getText().equals("0") && HasloText.getText().equals("0") ){
+        String password = getPasswordByEmail(LoginText.getText());
+        if(password.equals( HasloText.getText()) ){
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
                 Parent root = loader.load();
