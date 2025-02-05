@@ -36,6 +36,7 @@ public class dodawaniezwController {
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,6 +59,7 @@ public class dodawaniezwController {
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }

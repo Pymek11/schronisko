@@ -31,6 +31,7 @@ public class AdoptujacyLoginController {
                 newStage.setScene(new Scene(root));
                 newStage.setTitle("Oddawanie zwierzat");
                 newStage.show();
+                newStage.setResizable(false);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -46,6 +47,7 @@ public class AdoptujacyLoginController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Strona Schroniska");
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }

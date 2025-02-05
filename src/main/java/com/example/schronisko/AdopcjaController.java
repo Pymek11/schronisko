@@ -51,6 +51,7 @@ public class AdopcjaController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Adoptujący GUI");
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,6 +94,7 @@ public class AdopcjaController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Adoptujący GUI");
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }

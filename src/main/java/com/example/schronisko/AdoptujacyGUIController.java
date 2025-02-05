@@ -42,6 +42,7 @@ public class AdoptujacyGUIController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Oddawanie zwierzat");
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,6 +58,7 @@ public class AdoptujacyGUIController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Login");
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -35,6 +35,7 @@ public class stanController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Oddawanie zwierzat");
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }

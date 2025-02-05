@@ -35,6 +35,7 @@ public class DodawaniePracownikController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Oddawanie zwierzat");
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,6 +58,7 @@ public class DodawaniePracownikController {
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.show();
+            newStage.setResizable(false);
         } catch (IOException e) {
             e.printStackTrace();
         }
