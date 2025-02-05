@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -76,7 +77,10 @@
                               </GridPane>
                            </children>
                         </Pane>
-                        <Pane prefHeight="259.0" prefWidth="286.0" />
+                        <Pane prefHeight="259.0" prefWidth="286.0">
+                           <children>
+                              <ImageView fitHeight="259.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" />
+                           </children></Pane>
                      </children>
                   </HBox>
                   <Pane prefHeight="140.0" prefWidth="308.0">
