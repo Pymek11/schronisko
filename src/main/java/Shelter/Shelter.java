@@ -268,12 +268,6 @@ public class Shelter {
     public static void main(String[] args) {
         Shelter shelter = new Shelter();
 
-        User user = new User(0,"ABC","123","asd","123");
-        Employee employee = new Employee(0,"ABC","123","asd","123");
-        shelter.addUserToList(user);
-        shelter.addEmployeeToList(employee);
-        shelter.saveUserListToCSV();
-        shelter.saveEmployeeListToCSV();
     }
 }
 
