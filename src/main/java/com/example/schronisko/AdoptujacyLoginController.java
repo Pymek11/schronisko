@@ -1,5 +1,6 @@
 package com.example.schronisko;
 
+import com.sun.jdi.Value;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,6 +30,14 @@ public class AdoptujacyLoginController {
             }
         }
         return "Email not found";
+    }
+    public String getIdByEmail(String email){
+        for (User user : shelter.getUserList()) {
+            if (String.valueOf(user.getId()).equals(email)) {
+                return String.valueOf(user.getId());
+            }
+        }
+        return "id not found";
     }
     public void onZalogujButton(){
         String password = getPasswordByEmail(LoginText.getText());

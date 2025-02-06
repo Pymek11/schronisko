@@ -54,9 +54,16 @@ public class AdopcjaController {
     }
 
     public void onAdoptujButton(){
-        shelter.getAnimalList().remove(i);
-        shelter.saveAnimalListToCSV();
+        //shelter.getAnimalList().remove(i);
+
         i-=1;
+        // jak dostac którym userem jesteśmy
+        int userid=0;
+        Adoption adoption = new Adoption(0,userid,shelter.getAnimalListElem(i).getID());
+        shelter.addAdoptionApplicationToList(adoption);
+        shelter.saveAnimalListToCSV();
+        shelter.saveUserListToCSV();
+        shelter.saveAdoptionListToCSV();
         try {
             // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
