@@ -12,6 +12,7 @@ import Shelter.*;
 import java.io.IOException;
 
 public class PracownikLoginController {
+    Shelter shelter = new Shelter();
     @FXML
     private Button PowrotButton;
     @FXML
@@ -20,9 +21,19 @@ public class PracownikLoginController {
     private TextField IDPracownikaText;
     @FXML
     private PasswordField HasloPracownikaText;
-
+    public String getPasswordByID(String id) {
+        for (Employee employee : shelter.getEmployeeList()) {
+            System.out.println(employee.getId());
+            if (String.valueOf(employee.getId()).equals(id)) {
+                return employee.getPassword();
+            }
+        }
+        return "Id not found";
+    }
     public void onZalogujButton(){
-        if(HasloPracownikaText.getText().equals("admin") && IDPracownikaText.getText().equals("admin")){
+        String password = getPasswordByID(IDPracownikaText.getText());
+        System.out.println(password);
+        if(password.equals( HasloPracownikaText.getText())){
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("pracownikzalogowanyGUI.fxml"));
                 Parent root = loader.load();
