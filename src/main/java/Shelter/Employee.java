@@ -5,11 +5,10 @@ import java.util.Random;
 public class Employee{
     private String name;
     private String address;
-    private String stanowisko;
     private String password;
     private int id;
 
-    public Employee(int id_, String name_, String address_, String password,String stanowisko_) {
+    public Employee(int id_, String name_, String address_, String password) {
         if(id == 0 ){
             this.id = generateID();
         }else{
@@ -18,7 +17,7 @@ public class Employee{
         this.name = name_;
         this.address = address_;
         this.password = password;
-        this.stanowisko = stanowisko_;
+
 
     }
     public String getName() {
@@ -32,12 +31,6 @@ public class Employee{
     }
     public void setAddress(String address) {
         this.address = address;
-    }
-    public String getStanowisko() {
-        return stanowisko;
-    }
-    public void setStanowisko(String stanowisko_) {
-        this.stanowisko = stanowisko_;
     }
     public int getId() {
         return id;

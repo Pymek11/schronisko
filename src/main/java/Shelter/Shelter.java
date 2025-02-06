@@ -1,8 +1,10 @@
 package Shelter;
 import java.io.*;
+import java.nio.channels.ShutdownChannelGroupException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.ScheduledFuture;
 
 public class Shelter {
     private List<Animal> animalList;
@@ -84,7 +86,7 @@ public class Shelter {
             br.readLine();
             while ((line = br.readLine()) != null) {
                String[] data = line.split(",");
-                Employee employee = new Employee(Integer.parseInt(data[0]), data[1], data[2],data[3],data[4]);
+                Employee employee = new Employee(Integer.parseInt(data[0]), data[1], data[2],data[3]);
                 addEmployeeToList(employee);
             }
         } catch (IOException e) {
@@ -218,15 +220,13 @@ public class Shelter {
     public void saveEmployeeListToCSV() {
         String filePath = "src/main/resources/com/example/schronisko/ListaPracownikow";
         try (FileWriter writer = new FileWriter(filePath)) {
-            writer.write("ID,Name,Address,Email,AdoptionId\n"); // Nagłówki kolumn
-            for (User user : userList) {
+            writer.write("ID,Name,Address,Hasło\n"); // Nagłówki kolumn
+            for (Employee employee : employeeList) {
                 writer.write(
-                        user.getId() + "," +
-                        user.getName() + ","+
-                        user.getAddress() + ","+
-                        user.getEmail()+ ","+
-                        user.getPassword()+ ","+
-                        user.getAdoptionIdList() +"\n");
+                        employee.getId() + "," +
+                        employee.getName() + ","+
+                        employee.getAddress() + ","+
+                        employee.getPassword()+ "\n");
             }
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku CSV.");
@@ -270,39 +270,8 @@ public class Shelter {
     }
     public static void main(String[] args) {
         Shelter shelter = new Shelter();
-        Animal animal = new Animal(0,"Burek","Pies","Mieszaniec",10,20);
-        animal.setPicture("pies1.png");
-        shelter.addAnimalToList(animal);
-        Animal animal1 = new Animal(0,"Azor","Pies","Mieszaniec",9,15.1f);
-        animal1.setPicture("pies2.png");
-        shelter.addAnimalToList(animal1);
-        Animal animal3 = new Animal(0,"Pymek","Pies","Mieszaniec",17,62.1f);
-        animal3.setPicture("pies10.png");
-        shelter.addAnimalToList(animal3);
-        Animal animal4 = new Animal(0,"Suchar","Pies","Mieszaniec",5,12.1f);
-        animal4.setPicture("pies3.png");
-        shelter.addAnimalToList(animal4);
-        Animal animal5 = new Animal(0,"Moris","Pies","Mieszaniec",13,9.3f);
-        animal5.setPicture("pies4.png");
-        shelter.addAnimalToList(animal5);
-        Animal animal6 = new Animal(0,"Riko","Pies","Mieszaniec",11,14.1f);
-        animal6.setPicture("pies5.png");
-        shelter.addAnimalToList(animal6);
-        Animal animal7 = new Animal(0,"Bazyl","Pies","Mieszaniec",5,12f);
-        animal7.setPicture("pies6.png");
-        shelter.addAnimalToList(animal7);
-        Animal animal8 = new Animal(0,"Cazar","Pies","Mieszaniec",6,9.2f);
-        animal8.setPicture("pies7.png");
-        shelter.addAnimalToList(animal8);
-        Animal animal9 = new Animal(0,"Reksio","Pies","Mieszaniec",3,13.4f);
-        animal9.setPicture("pies8.png");
-        shelter.addAnimalToList(animal9);
-        Animal animal2 = new Animal(0,"Magnus","Pies","Mieszaniec",8,23f);
-        animal2.setPicture("pies9.png");
-        shelter.addAnimalToList(animal2);
-        Animal animal11 = new Animal(0,"Wojtek","NiePies","Niedźwiedź",78,453.5f);
-        animal11.setPicture("pies11.png");
-        shelter.addAnimalToList(animal11);
+        Employee employee = new Employee(0,"Patryk","Kraków aleja jakas 2","haslo");
+        shelter.addEmployeeToList(employee);
         shelter.saveUserListToCSV();
         shelter.saveEmployeeListToCSV();
         shelter.saveAnimalListToCSV();
