@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import Shelter.*;
+
 import java.io.IOException;
 public class AdoptujacyGUIController {
 
@@ -16,6 +16,11 @@ public class AdoptujacyGUIController {
     private Button AdopcjaButton;
     @FXML
     private Button OddanieButton;
+    private int myid;
+    public void initData(int data) {
+        this.myid = data;
+        //System.out.println("Otrzymana wartość: " + myid);
+    }
 
     public void onPowrotButton(){
         try {
@@ -53,7 +58,8 @@ public class AdoptujacyGUIController {
             Parent root = loader.load();
             Stage currentStage = (Stage) AdopcjaButton.getScene().getWindow();
             currentStage.close();
-
+            AdopcjaController adopcjaController = loader.getController();
+            adopcjaController.initData(myid);
             Stage newStage = new Stage();
             newStage.setScene(new Scene(root));
             newStage.setTitle("Login");

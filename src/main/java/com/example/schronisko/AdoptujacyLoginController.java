@@ -31,13 +31,13 @@ public class AdoptujacyLoginController {
         }
         return "Email not found";
     }
-    public String getIdByEmail(String email){
+    public int getIdByEmail(String email){
         for (User user : shelter.getUserList()) {
-            if (String.valueOf(user.getId()).equals(email)) {
-                return String.valueOf(user.getId());
+            if (user.getEmail().equals(email)) {
+                return user.getId();
             }
         }
-        return "id not found";
+        return 0;
     }
     public void onZalogujButton(){
         String password = getPasswordByEmail(LoginText.getText());
@@ -46,10 +46,11 @@ public class AdoptujacyLoginController {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
                 Parent root = loader.load();
                 Stage currentStage = (Stage) ZalogujButton.getScene().getWindow();
+                AdoptujacyGUIController adoptujacyGUIController = loader.getController();
+                adoptujacyGUIController.initData(getIdByEmail(LoginText.getText()));
                 currentStage.close();
                 Stage newStage = new Stage();
                 newStage.setScene(new Scene(root));
-
                 newStage.show();
                 newStage.setResizable(false);
             } catch (IOException e) {
