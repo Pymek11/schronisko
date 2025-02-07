@@ -1,15 +1,22 @@
 @startuml
 actor User
-participant ShelterSystem
-participant AdoptujacyLoginController
-participant UserAuthenticationController
-participant LoginController
-participant AuthenticationController
-
-participant Animal
-
-participant Adoption
+participant Shelter
+participant Rejestracja
+participant Login
+participant Adopcja
+participant Oddawanie
+participant Wniosek
 
 
+
+User -> Shelter : Shelter instance
+Shelter -> Rejestracja : onZarejestrujButton()
+Rejestracja -> Shelter : onZarejestrujButton()
+Shelter -> Login : onZalogujButton()
+Login -> Adopcja : onAdopcjaButton()
+Login -> Oddawanie : onOddanieButton()
+Oddawanie -> Shelter : onDodajButton()
+Adopcja -> Wniosek : onAdoptujButton()
+Wniosek -> Shelter : onAdoptujButton()
 @enduml
 
