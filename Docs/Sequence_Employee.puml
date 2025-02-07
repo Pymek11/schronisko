@@ -1,11 +1,46 @@
 @startuml
+
 actor "Pracownik" as Employee
 entity "Shelter" as Shelter
 entity "AnimalEntity" as AnimalEntity
+entity "AdoptionEntity" as AdoptionEntity
+entity "Logowanie" as Logowanie
+entity "Lista Zwierząt" as AnimalList
+entity "Lista Pracowników" as EmployeeList
+entity "Lista Wniosków" as AddoptionList
 
-Employee -> Shelter : addAnimal(animal)
-Shelter -> Animal : createAnimal(animalInfo)
 
-Shelter -> Shelter : storeAnimal(animal)
+Employee -> Shelter : Login
+Shelter -> EmployeeList : Validate Credentials
+EmployeeList -> Shelter : Valid/Invalid
+Shelter -> Employee: Loged/denied
+
+Employee -> Shelter : viewAdoptionRequests()
+Shelter -> AdoptionList : getAdoptionList()
+AdoptionList -> Shelter : return adoption requests
+Shelter -> Employee : return addoption list
+
+Employee -> Shelter : AcceptAdoption()
+Shelter -> AdoptionEntity: AddoptionConfirmed
+AdoptionEntity -> AnimalList : remove from list of animal
+AdoptionEntity -> AdoptionList: remove adoption requests
+
+Employee -> Shelter : DenyAddoption()
+Shelter -> AdoptionEntity: AddoptionDenied
+AdoptionEntity -> AnimalList : remove from list of animal
+AdoptionEntity -> AdoptionList: remove adoption requests
+
+Employee -> Shelter : checkAnimalCount()
+Shelter -> AnimalList : getlength()
+AnimalList -> Employee : return number of animals
+
+Employee -> Shelter : checkAddoptionCount()
+Shelter -> AddoptionList : getlength()
+AddoptionList -> Employee : return number of addoptions
+
+Employee -> Shelter : addNewAnimal(animal)
+Shelter -> AnimalEntity : createNewAnimal()
+AnimalEntity -> AnimalList: addAnimalList(animal)
+AnimalList -> Shelter : saveAnimalList()
 
 @enduml
