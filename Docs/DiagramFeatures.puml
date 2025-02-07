@@ -1,0 +1,23 @@
+@startuml
+actor "Użytkownik" as User
+actor "Pracownik" as Employee
+
+package "Shelter System" {
+    [Shelter] -down-> [Animal] : manages
+    [Shelter] -down-> [Employee] : manages
+    [Shelter] -down-> [Adoption] : manages
+    [Shelter] -down-> [User] : manages
+
+    [Shelter] --> [Animal] : add, remove, and modify animals
+    [Shelter] --> [Employee] : add, remove, and modify employees
+    [Shelter] --> [Adoption] : add, remove, and modify adoptions
+    [Shelter] --> [User] : add, remove, and modify users
+    [Shelter] --> [CSV Files] : load and save lists from/to CSV files
+}
+
+User --> [Adoption] : applies for adoption
+
+Employee --> [Animal] : add, modify, and view animals
+Employee --> [Adoption] : adoption management
+
+@enduml
