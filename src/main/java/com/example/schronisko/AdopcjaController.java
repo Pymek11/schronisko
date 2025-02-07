@@ -70,7 +70,7 @@ public class AdopcjaController {
         i-=1;
         try {
             // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyGUI.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("adoptujacyLoginGUI.fxml"));
             Parent root = loader.load();
 
             // Get the current stage (window) and close it
