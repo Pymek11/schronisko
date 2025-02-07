@@ -15,11 +15,11 @@ public class stanController {
     @FXML
     private Button PowrotButton;
     @FXML
-    private TextField iloscAdText;
+    private TextField iloscWnText;
     @FXML
     private TextField iloscZwText;
     public void Refresh(){
-        iloscAdText.setText(String.valueOf(shelter.getAdoptionList().size()));
+        iloscWnText.setText(String.valueOf(shelter.getAdoptionList().size()));
         iloscZwText.setText(String.valueOf(shelter.getAnimalList().size()));
     }
     public void initialize(){
