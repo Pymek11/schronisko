@@ -43,21 +43,9 @@ public class User {
     public int getId() {
         return id;
     }
-    public void ViewAnimals(){
-        //todo
-    }
-    public void AdoptAnimals(){
-        //todo
-    }
     private int generateID() {
         Random random = new Random();
         return random.nextInt(10000); // Losowe ID z przedziału 100000 - 999999
-    }
-    private void addAdoptionId(int AdoptionId){
-        adoptionIdList.add(AdoptionId);
-    }
-    public List<Integer> getAdoptionIdList() {
-        return adoptionIdList;
     }
     public String getPassword() {
         return password;

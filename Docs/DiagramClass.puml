@@ -1,0 +1,66 @@
+@startuml
+class Animal {
+    - id: int
+    - imie: String
+    - species: String
+    - breed: String
+    - age: int
+    - weight: float
+    - description: String
+    - picture: String
+    - generateID(): int
+}
+
+class Adoption {
+    - id: int
+    - idofSubbmiter: int
+    - idofAnimal: int
+    - generateID(): int
+}
+
+class Employee {
+    - id: int
+    - name: String
+    - address: String
+    - password: String
+    - generateID(): int
+}
+
+class User {
+    - id: int
+    - name: String
+    - address: String
+    - email: String
+    - password: String
+    - generateID(): int
+}
+
+class Shelter {
+    - animalList: List<Animal>
+    - employeeList: List<Employee>
+    - adoptionList: List<Adoption>
+    - userList: List<User>
+    - speciesList: List<String>
+    - instance: Shelter
+    + getInstance(): Shelter
+    + addAnimalToList(Animal animal)
+    + addEmployeeToList(Employee employee)
+    + addAdoptionApplicationToList(Adoption adoption)
+    + addUserToList(User user)
+    + saveAnimalListToCSV()
+    + saveEmployeeListToCSV()
+    + saveAdoptionListToCSV()
+    + saveUserListToCSV()
+    - loadAnimalListFromCSV(String filename)
+    - loadEmployeeListFromCSV(String filename)
+    - loadAdoptionListFromCSV(String filename)
+    - loadUserListFromCSV(String filename)
+}
+
+Shelter "1" *-- "many" Animal
+Shelter "1" *-- "many" Employee
+Shelter "1" *-- "many" Adoption
+Shelter "1" *-- "many" User
+Adoption "1" -- "1" Animal
+Adoption "1" -- "1" User
+@enduml

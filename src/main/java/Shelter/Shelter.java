@@ -262,15 +262,14 @@ public class Shelter {
     public void saveUserListToCSV() {
         String filePath = "src/main/resources/com/example/schronisko/ListaUzytkownikow";
         try (FileWriter writer = new FileWriter(filePath)) {
-            writer.write("ID,Name,Address,Email,Haslo,AdoptionId\n"); // Nagłówki kolumn
+            writer.write("ID,Name,Address,Email,Haslo\n"); // Nagłówki kolumn
             for (User user : userList) {
                 writer.write(
                         user.getId() + "," +
                         user.getName() + ","+
                         user.getAddress() + ","+
                         user.getEmail()+ ","+
-                        user.getPassword()+ ","+
-                        user.getAdoptionIdList() +"\n");
+                        user.getPassword()+ "\n");
             }
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku CSV.");
