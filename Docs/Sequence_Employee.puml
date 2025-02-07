@@ -1,0 +1,11 @@
+@startuml
+actor "Pracownik" as Employee
+entity "Shelter" as Shelter
+entity "AnimalEntity" as AnimalEntity
+
+Employee -> Shelter : addAnimal(animal)
+Shelter -> Animal : createAnimal(animalInfo)
+
+Shelter -> Shelter : storeAnimal(animal)
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+actor User
+participant ShelterSystem
+participant AdoptujacyLoginController
+participant UserAuthenticationController
+participant LoginController
+participant AuthenticationController
+
+participant Animal
+
+participant Adoption
+
+
+@enduml
+
