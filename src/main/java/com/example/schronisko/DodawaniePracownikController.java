@@ -49,9 +49,8 @@ public class DodawaniePracownikController {
         String imie = ImieText.getText();
         int wiek = Integer.parseInt(WiekText.getText());
         String rasa = RasaText.getText();
-        String gatunek = GatunekText.getText();
         float waga = Float.parseFloat(WagaText.getText());
-        Animal animal = new Animal(10,imie,gatunek,rasa, wiek,waga);
+        Animal animal = new Animal(0,imie,"gatunek",rasa, wiek,waga);
         animal.setPicture(Image.getText());
         shelter.getAnimalList().add(animal);
 
