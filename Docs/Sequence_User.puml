@@ -1,22 +1,30 @@
 @startuml
-actor User
-participant Shelter
-participant Rejestracja
-participant Login
-participant Adopcja
-participant Oddawanie
-participant Wniosek
 
+actor "Uzytkownik" as Employee
+entity "Shelter" as Shelter
+entity "AnimalEntity" as AnimalEntity
+entity "AdoptionEntity" as AdoptionEntity
+entity "Logowanie" as Logowanie
+entity "Lista Zwierząt" as AnimalList
+entity "Lista Użytkownikow" as EmployeeList
+entity "Lista Wniosków" as AddoptionList
 
+Employee -> Shelter : Login
+Employee -> Shelter : Rejestracja
+Shelter -> Shelter : save to csv
+Shelter -> EmployeeList : Validate Credentials
+EmployeeList -> Shelter : Valid/Invalid
+Shelter -> Employee: Loged/denied
 
-User -> Shelter : Shelter instance
-Shelter -> Rejestracja : onZarejestrujButton()
-Rejestracja -> Shelter : onZarejestrujButton()
-Shelter -> Login : onZalogujButton()
-Login -> Adopcja : onAdopcjaButton()
-Login -> Oddawanie : onOddanieButton()
-Oddawanie -> Shelter : onDodajButton()
-Adopcja -> Wniosek : onAdoptujButton()
-Wniosek -> Shelter : onAdoptujButton()
+Employee -> Shelter : addNewAnimal(animal)
+Shelter -> AnimalEntity : createNewAnimal()
+AnimalEntity -> AnimalList : addAnimalList(animal)
+AnimalList -> Shelter : save to csv
+AnimalEntity -> Shelter : new animal added
+Shelter -> Employee : confirm animal added
+
+Employee -> Shelter : Adoption()
+Shelter -> AddoptionList : AdoptionForm
+AddoptionList -> Shelter : save to csv
+
 @enduml
-
