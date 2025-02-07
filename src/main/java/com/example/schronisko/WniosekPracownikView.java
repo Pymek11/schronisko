@@ -68,7 +68,7 @@ public class WniosekPracownikView {
 
         Animal u = getAnimal(shelter.getAdoptionListElem(i).getIdofAnimal());
         User k = getAdopting(shelter.getAdoptionListElem(i).getIdofSubbmiter());
-        System.out.println(adoption.getId());
+
 
             IdText.setText(Integer.toString(adoption.getId()));
 
