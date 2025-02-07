@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);"  xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schronisko.PracownikZalogowanyController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #496ccc, #2c29a3);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schronisko.PracownikZalogowanyController">
     <children>
         <Pane prefHeight="140.0" prefWidth="600.0">
             <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" layoutY="14.0" prefHeight="87.0" prefWidth="600.0" text="CHCESZ SPRAWDZIC STAN SCHRONISKA CZY DODAĆ ZWIERZĘ" textAlignment="CENTER" textFill="WHITE">
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutY="14.0" prefHeight="87.0" prefWidth="600.0" text="CO CHCESZ DZISIAJ ZROBIC" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="21.0" />
                     </font>
@@ -16,25 +16,34 @@
             </children></Pane>
         <HBox prefHeight="201.0" prefWidth="600.0">
             <children>
-                <Pane prefHeight="201.0" prefWidth="296.0">
+                <Pane prefHeight="198.0" prefWidth="208.0">
                     <children>
-                        <Button fx:id="StanButton" onAction="#onStanButton" layoutX="42.0" layoutY="42.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="219.0" text="SPRAWDZIĆ STAN">
+                        <Button fx:id="StanButton" layoutX="21.0" layoutY="33.0" mnemonicParsing="false" onAction="#onStanButton" prefHeight="66.0" prefWidth="157.0" text="SPRAWDZIĆ STAN">
                             <font>
-                                <Font size="20.0" />
+                                <Font size="15.0" />
                             </font></Button>
                     </children></Pane>
-                <Pane prefHeight="201.0" prefWidth="284.0">
+                <Pane prefHeight="198.0" prefWidth="220.0">
                     <children>
-                        <Button fx:id="DodawanieButton" onAction="#onDodawanieButton" layoutX="40.0" layoutY="43.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="219.0" text="DODAĆ ZWIERZĘ">
+                        <Button fx:id="DodawanieButton" layoutX="27.0" layoutY="33.0" mnemonicParsing="false" onAction="#onDodawanieButton" prefHeight="66.0" prefWidth="157.0" text="DODAĆ ZWIERZĘ">
                             <font>
-                                <Font size="22.0" />
+                                <Font size="15.0" />
                             </font>
                         </Button>
                     </children></Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="WnioskiButton" onAction="#onWnioskiButton" layoutX="17.0" layoutY="33.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="157.0" text="WNIOSKI">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
             </children></HBox>
         <Pane prefHeight="69.0" prefWidth="600.0">
             <children>
-                <Button fx:id="WylogujButton" onAction="#onWylogujButton" layoutX="37.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="WYLOGUJ" />
+                <Button fx:id="WylogujButton" layoutX="37.0" layoutY="21.0" mnemonicParsing="false" onAction="#onWylogujButton" prefHeight="25.0" prefWidth="112.0" text="WYLOGUJ" />
             </children>
         </Pane>
     </children>

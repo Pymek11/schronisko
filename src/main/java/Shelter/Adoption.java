@@ -8,7 +8,7 @@ public class Adoption {
     private int idofAnimal;
 
     public Adoption(int id_, int idofSubbmiter_, int idofAnimal_){
-        if(id == 0){
+        if(id_ == 0){
             id = generateID();
         }else {
             this.id = id_;

@@ -11,10 +11,24 @@ public class PracownikZalogowanyController {
     @FXML
     private Button WylogujButton;
     @FXML
+    private Button WnioskiButton;
+    @FXML
     private Button DodawanieButton;
     @FXML
     private Button StanButton;
-
+    public void onWnioskiButton(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("wniosekPracownikView.fxml"));
+            Parent root = loader.load();
+            Stage currentStage = (Stage) WnioskiButton.getScene().getWindow();
+            currentStage.close();
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void onWylogujButton(){
         try {

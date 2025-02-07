@@ -110,7 +110,16 @@ public class Shelter {
             e.printStackTrace();
         }
     }
-
+    public boolean removeAdoptionById(int adoptionId) {
+        // Find the adoption to remove
+        for (int index = 0; index < adoptionList.size(); index++) {
+            if (adoptionList.get(index).getId() == adoptionId) {
+                adoptionList.remove(index);
+                return true; // Return true when the removal is successful
+            }
+        }
+        return false; // Return false if the adoption ID was not found
+    }
     private void loadUserListFromCSV(String filename) {
         String filePath = "src/main/resources/com/example/schronisko/" + filename;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {

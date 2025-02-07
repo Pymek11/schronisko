@@ -9,16 +9,10 @@ public class Employee{
     private int id;
 
     public Employee(int id_, String name_, String address_, String password) {
-        if(id == 0 ){
-            this.id = generateID();
-        }else{
-            this.id=id_;
-        }
+        this.id = id_;
         this.name = name_;
         this.address = address_;
         this.password = password;
-
-
     }
     public String getName() {
         return name;

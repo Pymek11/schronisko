@@ -23,7 +23,6 @@ public class PracownikLoginController {
     private PasswordField HasloPracownikaText;
     public String getPasswordByID(String id) {
         for (Employee employee : shelter.getEmployeeList()) {
-            System.out.println(employee.getId());
             if (String.valueOf(employee.getId()).equals(id)) {
                 return employee.getPassword();
             }
@@ -32,7 +31,6 @@ public class PracownikLoginController {
     }
     public void onZalogujButton(){
         String password = getPasswordByID(IDPracownikaText.getText());
-        System.out.println(password);
         if(password.equals( HasloPracownikaText.getText())){
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("pracownikzalogowanyGUI.fxml"));
