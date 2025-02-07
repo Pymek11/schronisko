@@ -7,6 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Shelter.*;
+import org.w3c.dom.Text;
+
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 public class DodawaniePracownikController {
     Shelter shelter = Shelter.getInstance();
@@ -24,6 +27,8 @@ public class DodawaniePracownikController {
     private TextField RasaText;
     @FXML
     private TextField GatunekText;
+    @FXML
+    private TextField Image;
 
     public void onPowrotButton(){
         try {
@@ -47,6 +52,7 @@ public class DodawaniePracownikController {
         String gatunek = GatunekText.getText();
         float waga = Float.parseFloat(WagaText.getText());
         Animal animal = new Animal(10,imie,gatunek,rasa, wiek,waga);
+        animal.setPicture(Image.getText());
         shelter.getAnimalList().add(animal);
 
         shelter.saveAnimalListToCSV();

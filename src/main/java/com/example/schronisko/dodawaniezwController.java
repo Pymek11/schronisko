@@ -26,6 +26,8 @@ public class dodawaniezwController {
     private TextField RasaText;
     @FXML
     private TextField GatunekText;
+    @FXML
+    private TextField Image;
 
     public void onPowrotButton(){
         try {
@@ -48,6 +50,7 @@ public class dodawaniezwController {
         String gatunek = GatunekText.getText();
         float waga = Float.parseFloat(WagaText.getText());
         Animal animal = new Animal(10,imie,gatunek,rasa, wiek,waga);
+        animal.setPicture(Image.getText());
         shelter.getAnimalList().add(animal);
 
         shelter.saveAnimalListToCSV();
