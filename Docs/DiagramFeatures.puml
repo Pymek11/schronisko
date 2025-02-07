@@ -8,16 +8,16 @@ package "Shelter System" {
     [Shelter] -down-> [Adoption] : manages
     [Shelter] -down-> [User] : manages
 
-    [Shelter] --> [Animal] : add, remove, and modify animals
-    [Shelter] --> [Employee] : add, remove, and modify employees
-    [Shelter] --> [Adoption] : add, remove, and modify adoptions
-    [Shelter] --> [User] : add, remove, and modify users
-    [Shelter] --> [CSV Files] : load and save lists from/to CSV files
+    [Shelter] -right-> [CSV Files] : load and save lists from/to CSV files
+    [Shelter] -left-> [Animal] : add, remove,\nand modify animals
+    [Shelter] -left-> [Employee] : add, remove,\nand modify employees
+    [Shelter] -left-> [Adoption] : add, remove,\nand modify adoptions
+    [Shelter] -left-> [User] : add, remove,\nand modify users
 }
 
-User --> [Adoption] : applies for adoption
+User -down-> [Adoption] : applies for adoption
 
-Employee --> [Animal] : add, modify, and view animals
-Employee --> [Adoption] : adoption management
+Employee -right-> [Animal] : add, modify,\nand view animals
+Employee -right-> [Adoption] : adoption management
 
 @enduml
